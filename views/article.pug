@@ -1,0 +1,16 @@
+extends layout
+
+block layout-content
+      div.lcol
+      div.rcol
+       each val in article
+        div.rcol-content
+          div.Message
+            div.ar-title
+              a(href="/" title="Retour") < Retour à la liste des articles
+              h1=val.title
+            span.Details=val.dateCreated
+          div.Box
+            p.ar-content=val.content
+            div.divider
+            span.summ=`Rédigé par ${val.author.name}`

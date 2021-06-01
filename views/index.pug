@@ -1,0 +1,21 @@
+extends layout
+
+block layout-content
+      div.lcol
+      div.rcol
+        div.rcol-content
+          div.Message
+            div.Title
+              h1 Bienvenue sur ce Blog Node
+              span .JS
+            span.Details Vous trouverez ici les derniers articles
+          each val in articles
+            div.Box
+              div.box-inner
+                div.capimg
+                  img(src="images/pic.jpg" alt="Caption")
+                  span=val.author.name
+                a(href=`article/${val._id}`) 
+                  h2=val.title
+                p=val.content
+                span=val.dateCreated
